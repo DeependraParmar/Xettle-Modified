@@ -70,7 +70,7 @@ const payment = () => {
                     src={paymenthead}
                     width="982"
                     height="464"
-                    className="md:w-[70%] lg:w-[35%] mx-auto"
+                    className="md:w-[70%] w-[70%] lg:w-[35%] mx-auto"
                     alt="Crypto Mobile Image"
                 />
             </div>
@@ -95,14 +95,14 @@ const payment = () => {
                 gateway options available:
             </p>
             <div className="flex flex-col items-center justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:gap-[30px] sm:gap-[20px] sm:w-[80%] w-[90%] mx-auto gap-10 mb-10 ">
+                <div className="grid grid-cols-1 sm:grid-cols-3 xl:gap-[30px] sm:gap-[20px]  mx-auto gap-10 mb-10 lg:px-[10%]">
                     {cardData &&
                         cardData.map((data, index) => {
                             return (
-                                <div className="w-[96%] sm:w-auto mx-auto">
-                                    <div className="bg-[#F8FBFF] xl:w-[466px] sm:w-auto space-y-10 p-10 md:h-auto cardbg font-[Inter]">
+                                <div className="w-[95%] sm:w-auto mx-auto">
+                                    <div className="bg-[#F8FBFF] xl:w-[auto] sm:w-auto space-y-10 p-10 md:h-auto cardbg font-[Inter]">
                                         <div className="lg:text-[20px] sm:text-[20px] text-[20px] font-bold flex">
-                                            <Image src={thumbups} height={30} width={30} alt="thumbsup" />
+                                            <Image src={thumbups} key={index} height={30} width={30} alt="thumbsup" />
                                             {data.title}
                                         </div>
                                         <h2 className="lg:text-[16px] text-[18px] md:text-[12px] sm:text-[16px]">
@@ -114,8 +114,8 @@ const payment = () => {
                         })}
                 </div>
                 <div className="w-[90%] mx-auto sm:pt-[79px] sm:pb-[92px] pt-[10px] pb-[26px]">
-                    <div className="w-full sm:h-[92px] h-[45px] px-[19px] bg-[#4C9CFB33] rounded-2xl flex items-center justify-between">
-                        <h5 className="lg:text-[26px] sm:text-xl font-bold ">Choosing the Right Payment Gateway</h5>
+                    <div className="w-full mb-8 sm:h-[92px] h-[45px] px-[19px] bg-[#4C9CFB33] rounded-2xl flex items-center justify-between">
+                        <h5 className="lg:text-[20px] sm:text-xl font-bold ">Choosing the Right Payment Gateway</h5>
                         <Image
                             src={divider1}
                             width={248}
@@ -125,15 +125,15 @@ const payment = () => {
                         />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 xl:gap-[92px] sm:gap-[20px] gap-[40px] sm:w-[80%] w-[90%] mx-auto mt-8 mb-10">
-                        {cardData2 &&
-                            cardData2.map((data, index) => {
-                                return (
-                                    <>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:gap-[30px] sm:gap-[20px] sm:w-[78%] w-[90%] mx-auto gap-10 mb-10 lg:py-12">
+                            {cardData2 &&
+                                cardData2.map((data, index) => {
+                                    return (
                                         <div className="w-[96%] sm:w-auto mx-auto">
-                                            <div className="bg-[#F8FBFF] xl:w-[466px] sm:w-auto space-y-10 p-10 md:h-[409px] cardbg font-[Inter]">
+                                            <div className="bg-[#F8FBFF] xl:w-[500px] sm:w-auto space-y-10 p-10 md:h-[100%] cardbg font-[Inter]">
                                                 <div className="lg:text-[20px] sm:text-[20px] text-[20px] font-bold flex">
-                                                    <Image src={thumbups} height={30} width={30} alt="thumbsup" />
+                                                    <Image src={thumbups} key={index} height={30} width={30} alt="thumbsup" />
                                                     {data.title}
                                                 </div>
                                                 <h2 className="lg:text-[16px] text-[18px] md:text-[12px] sm:text-[16px]">
@@ -141,21 +141,22 @@ const payment = () => {
                                                 </h2>
                                             </div>
                                         </div>
-                                    </>
-                                );
-                            })}
+                                    );
+                                })}
+                        </div>
+                    </div>
+                    <div className="py-10 text-center flex flex-col justify-center items-center space-y-10 md:space-y-[31px]">
+                        <h2 className="md:text-[36px] text-[24px]">Contact Us</h2>
+                        <p className="md:text-[20px] text-[15px] font-base max-w-[18rem] md:max-w-2xl">
+                            Ready to elevate your crypto trading experience with our
+                            state-of-the-art platform? Contact us today and let&apos;s make it
+                            happen.
+                        </p>
+                        <button className="bg btn">Contact Us</button>
                     </div>
                 </div>
-                <div className="md:pt-36 py-20 text-center flex flex-col justify-center items-center space-y-10 md:space-y-[31px]">
-                    <h2 className="md:text-[36px] text-[24px]">Contact Us</h2>
-                    <p className="md:text-[26px] text-[15px] font-base max-w-[18rem] md:max-w-2xl">
-                        Ready to elevate your crypto trading experience with our
-                        state-of-the-art platform? Contact us today and let&apos;s make it
-                        happen.
-                    </p>
-                    <button className="bg btn">Contact Us</button>
-                </div>
             </div>
+
         </div>
     )
 }
